@@ -50,7 +50,7 @@
 <!-- SCENE 1 — CODE RAIN -->
 <div id="scene1" class="scene active">
     <lottie-player
-        src="https://assets3.lottiefiles.com/packages/lf20_j2hl0vhr.json" <!-- Code Rain animation -->
+        src="https://assets7.lottiefiles.com/packages/lf20_7fCbvNSmFD.json"
         background="transparent"
         speed="1"
         style="width:600px;height:600px"
@@ -76,10 +76,10 @@
     <h2>Compiling message for Cô Trầm...</h2>
 </div>
 
-<!-- SCENE 4 — FINAL BOUQUET MESSAGE -->
+<!-- SCENE 4 — FINAL BÓ HOA / LỜI CHÚC -->
 <div id="scene4" class="scene">
     <lottie-player 
-      src="https://assets2.lottiefiles.com/packages/lf20_z6t3jxny.json" <!-- Flower bouquet animation -->
+      src="https://assets9.lottiefiles.com/packages/lf20_lx5cpst5.json"
       background="transparent"
       speed="1"
       style="width:480px;height:480px"
@@ -87,13 +87,13 @@
     </lottie-player>
 
     <h1 style="color:#00ffc8; font-size:34px; margin-top: -40px;">
-        Chúc Mừng Ngày 20/11 — Cô Trầm
+        Chúc Mừng Ngày 20/11 — Cô Trầm
     </h1>
 
     <p style="color:#fff; width:70%; font-size:20px;">
-        Cảm ơn cô vì những buổi học SAT đầy nhiệt huyết, tận tâm và truyền cảm hứng.  
-        Chúc cô luôn mạnh khỏe, hạnh phúc và thành công.  
-        — Học sinh iu quý của cô gửi tặng ❤️ 😍😍😍
+        Cảm ơn cô vì những buổi học SAT đầy nhiệt huyết, tận tâm và truyền cảm hứng.<br>
+        Chúc cô luôn mạnh khỏe, hạnh phúc và thành công.<br>
+        — Học sinh iu quý của cô gửi tặng ❤️
     </p>
 </div>
 
@@ -103,17 +103,13 @@ function showScene(id) {
     document.getElementById(id).classList.add('active');
 }
 
-// ========================
-// SCENE TIMELINE CONTROL
-// ========================
+// Timeline
 setTimeout(() => showScene("scene2"), 4500);
 setTimeout(() => typeTerminal(), 4600);
 setTimeout(() => showScene("scene3"), 11500);
 setTimeout(() => showScene("scene4"), 16500);
 
-// ========================
-// TERMINAL TYPEWRITER EFFECT
-// ========================
+// Type‑writer effect
 const terminalLines = [
     "> Booting system...",
     "> Loading gratitude modules...",
@@ -122,12 +118,10 @@ const terminalLines = [
     "> Status: SUCCESS ✓"
 ];
 
-let index = 0;
-let charIndex = 0;
+let index = 0, charIndex = 0;
 
 function typeTerminal() {
     const box = document.getElementById("terminalText");
-
     if (index < terminalLines.length) {
         if (charIndex < terminalLines[index].length) {
             box.textContent += terminalLines[index][charIndex];
