@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20/11 — Chúc Cô Trầm</title>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<style>
+    body {
+        margin: 0;
+        background: #000;
+        color: #00ffea;
+        font-family: "Consolas", "Courier New", monospace;
+        overflow: hidden;
+    }
+    .scene {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+    .active {
+        opacity: 1;
+    }
+    h1, h2, p {
+        text-align: center;
+    }
+    .typewriter {
+        font-size: 22px;
+        width: 80%;
+        white-space: pre-wrap;
+        overflow: hidden;
+        border-right: 2px solid #00ffc8;
+        animation: caret 0.8s infinite;
+    }
+    @keyframes caret {
+        50% { border-color: transparent; }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- SCENE 1 — CODE RAIN -->
+<div id="scene1" class="scene active">
+    <lottie-player
+        src="https://assets2.lottiefiles.com/private_files/lf30_3x1pdm7g.json"
+        background="transparent"
+        speed="1"
+        style="width:600px;height:600px"
+        loop autoplay>
+    </lottie-player>
+    <h2>Initializing tribute program...</h2>
+</div>
+
+<!-- SCENE 2 — TERMINAL LOADING -->
+<div id="scene2" class="scene">
+    <div id="terminalText" class="typewriter"></div>
+</div>
+
+<!-- SCENE 3 — CODER TYPING -->
+<div id="scene3" class="scene">
+    <lottie-player 
+      src="https://assets9.lottiefiles.com/packages/lf20_jtbfg2nb.json"
+      background="transparent"
+      speed="1"
+      style="width:420px;height:420px"
+      loop autoplay>
+    </lottie-player>
+    <h2>Compiling message for Cô Trầm...</h2>
+</div>
+
+<!-- SCENE 4 — FINAL HOLOGRAM MESSAGE -->
+<div id="scene4" class="scene">
+    <lottie-player 
+      src="https://assets2.lottiefiles.com/packages/lf20_t24tpvcu.json"
+      background="transparent"
+      speed="1"
+      style="width:480px;height:480px"
+      loop autoplay>
+    </lottie-player>
+
+    <h1 style="color:#00ffc8; font-size:34px; margin-top: -40px;">
+        Chúc Mừng Ngày 20/11 — Cô Trầm
+    </h1>
+
+    <p style="color:#fff; width:70%; font-size:20px;">
+        Cảm ơn cô vì những buổi học SAT đầy nhiệt huyết, tận tâm và truyền cảm hứng.  
+        Chúc cô luôn mạnh khỏe, hạnh phúc và thành công.  
+        — Học sinh iu quý của cô gửi tặng ❤️ 😍😍😍
+    </p>
+</div>
+
+<script>
+function showScene(id) {
+    document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+
+// ========================
+// SCENE TIMELINE CONTROL
+// ========================
+setTimeout(() => showScene("scene2"), 4500);
+setTimeout(() => typeTerminal(), 4600);
+setTimeout(() => showScene("scene3"), 11500);
+setTimeout(() => showScene("scene4"), 16500);
+
+// ========================
+// TERMINAL TYPEWRITER EFFECT
+// ========================
+const terminalLines = [
+    "> Booting system...",
+    "> Loading gratitude modules...",
+    "> Connecting to: Co Tram...",
+    "> Sending appreciation packet...",
+    "> Status: SUCCESS ✓"
+];
+
+let index = 0;
+let charIndex = 0;
+
+function typeTerminal() {
+    const box = document.getElementById("terminalText");
+
+    if (index < terminalLines.length) {
+        if (charIndex < terminalLines[index].length) {
+            box.textContent += terminalLines[index][charIndex];
+            charIndex++;
+            setTimeout(typeTerminal, 40);
+        } else {
+            box.textContent += "\n";
+            index++;
+            charIndex = 0;
+            setTimeout(typeTerminal, 300);
+        }
+    }
+}
+</script>
+
+</body>
+</html>
